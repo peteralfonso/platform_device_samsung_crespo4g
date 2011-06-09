@@ -48,7 +48,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # WiMAX Property setting for checking WiMAX interface
 PRODUCT_PROPERTY_OVERRIDES += \
-       ro.wimax.interface=uwbr0
+    ro.wimax.interface=uwbr0
 
 # Hardware-specific features
 PRODUCT_COPY_FILES += \
