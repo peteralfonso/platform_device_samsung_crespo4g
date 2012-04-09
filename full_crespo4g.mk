@@ -19,6 +19,9 @@
 # product configuration (apps).
 #
 
+# APNs for 3G network access
+PRODUCT_COPY_FILES := device/samsung/crespo4g/4g-apns-conf.xml:system/etc/apns-conf.xml
+
 # Camera
 PRODUCT_PACKAGES := \
     Camera
@@ -36,13 +39,13 @@ PRODUCT_PACKAGES += \
         librs_jni
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # This is where we'd set a backup provider if we had one
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
 $(call inherit-product, device/samsung/crespo4g/device.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := full_crespo4g
 PRODUCT_DEVICE := crespo4g
+PRODUCT_BRAND := Android
 PRODUCT_MODEL := Full Android on Crespo4G
